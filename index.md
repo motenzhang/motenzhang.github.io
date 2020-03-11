@@ -1,7 +1,7 @@
 - ## Get Started
     - [ReadMe](/{{route}}/{{version}}/readme)
 - ## 基础设施
-	- [Linux](/linux)
+	- [Linux](/linux.md)
 	- [Apache](/{{route}}/{{version}}/apache)
     - [Nginx](/{{route}}/{{version}}/nginx)
     - [MySQL](/{{route}}/{{version}}/mysql)
