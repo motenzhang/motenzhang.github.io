@@ -1,33 +1,64 @@
 <!-- MarkdownTOC levels="2,3" autolink="true" autoanchor="true" style="unordered" markdown_preview="gitlab" -->
 
+- [备忘代码段](#%E5%A4%87%E5%BF%98%E4%BB%A3%E7%A0%81%E6%AE%B5)
+- [安装extensions扩展](#%E5%AE%89%E8%A3%85extensions%E6%89%A9%E5%B1%95)
+- [常用命令](#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4)
+
 <!-- /MarkdownTOC -->
-<larecipe-badge type="warning" circle icon="fa fa-user-plus"></larecipe-badge>
-<larecipe-button type="warning" radius="full">文档DOCUMENTATION</larecipe-button>
-```bash
-# 此程序目前为收集并整理后端开发所用工具及其使用简介（未完成）
-# 程序使用Laravel+Larecipe进行开发 文档内页使用MarkDown进行编辑
-```
-<larecipe-badge type="danger" circle icon="fa fa-spinner"></larecipe-badge>
-<larecipe-button type="danger" radius="full">文档协作COOPERATE</larecipe-button>
-```bash
-# 代码使用GIT作为管理工具，地址：http://10.3.38.251:8080/php_server/docs
-# 所有文档收录在{base_dir}/resources/docs/master/*.md下
-# 提交新文件或编辑文件
-# 索引文件放在index.md
-```
-<larecipe-badge type="success" circle icon="fa fa-share-square-o"></larecipe-badge>
-<larecipe-button type="success" radius="full">文档共享SHARE</larecipe-button>
-```bash
-# 记录-共享-协作
-# 继续调研使用GitBook或ReadTheDocs进行文档部署
-```
-[<larecipe-badge type="info" circle icon="fa fa-external-link"></larecipe-badge> <larecipe-button type="info" radius="full">MARKDOWN</larecipe-button>](markdown)
-<larecipe-card>
-    <larecipe-badge type="success" circle class="mr-3" icon="fa fa-info"></larecipe-badge> 文档完成进度PROGRESS
-    <larecipe-progress type="success" :value="60"></larecipe-progress>
-</larecipe-card>
+<a id="%E5%A4%87%E5%BF%98%E4%BB%A3%E7%A0%81%E6%AE%B5"></a>
+## 备忘代码段
 
-> {info} SHARE :joy: CREATE :sunny: COOPERATE :pig: TEAM :bug: MINING :coffee: EXPLORE :office: MARKDOWN  :heavy_check_mark:
-
-![logo](http://newsysfile.peopleyuqing.com/group1/M00/00/01/CiYL2FwnGDuAY_DoAA_QSMGzpxU152.png)
-<!-- <img alt="logo" src="http://newsysfile.peopleyuqing.com/group1/M00/00/01/CiYL2FwnGDuAY_DoAA_QSMGzpxU152.png"> -->
+```php
+// Creating default object from empty value
+$res = new \stdClass();
+// array_search返回键名，key为0时返回false 不会是预期结果 用in_array返回true/false
+array_search('1', [0=>1,1=>2]);return false;
+in_array('1', [0=>1,1=>2]); return true;
+// 对象转数组
+$data = array_map(function($item){
+    return (array) $item;
+},DB::table('table_name')->select(*));
+// 通过键值互换较array_unique更快速地去重数组
+array_flip($array);
+// 删除数组中的某值(非key)(https://stackoverflow.com/questions/7225070/php-array-delete-by-value-not-key)
+if ( ($key = array_search($del_val, $messages)) !== false ) {
+    unset($messages[$key]);
+}
+// 解析url参数
+$url = "http://xxx/?uid=123&code=456";
+$refer_parse = parse_url($url);
+// 解析参数为数组
+parse_str($refer_parse['query'],$queryArr);
+$code = $queryArr['code'];
+return $code = '456';
+```
+<a id="%E5%AE%89%E8%A3%85extensions%E6%89%A9%E5%B1%95"></a>
+## 安装extensions扩展
+```bash
+# 查找有没有安装此扩展
+php -i | grep fileinfo 
+# 查看扩展的版本
+php --ri fileinfo
+# 下载扩展包
+wget -O php-7.2.6.tar.gz http://cn2.php.net/get/php-7.2.6.tar.gz/from/this/mirror
+tar -zxvf php-7.2.6.tar.gz
+cd php-7.2.6/ext/fileinfo
+# phpize执行
+/usr/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make && make install
+# 更改php.ini 打开fileinfo扩展
+# 重啟php
+# 重启nginx(reload不行)/apache
+```
+<a id="%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"></a>
+## 常用命令
+```bash
+# php.ini修改生效
+vim /usr/local/php/etc/php.ini
+# 强杀php进程
+pkill -9 php-fpm
+# 启动
+/usr/bin/php-fpm
+service php-fpm restart
+```
