@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+<!-- MarkdownTOC levels="2,3" autolink="true" autoanchor="true" style="unordered" markdown_preview="gitlab" -->
 
-You can use the [editor on GitHub](https://github.com/motenzhang/motenzhang.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+<!-- /MarkdownTOC -->
+<larecipe-badge type="warning" circle icon="fa fa-user-plus"></larecipe-badge>
+<larecipe-button type="warning" radius="full">文档DOCUMENTATION</larecipe-button>
+```bash
+# 此程序目前为收集并整理后端开发所用工具及其使用简介（未完成）
+# 程序使用Laravel+Larecipe进行开发 文档内页使用MarkDown进行编辑
 ```
+<larecipe-badge type="danger" circle icon="fa fa-spinner"></larecipe-badge>
+<larecipe-button type="danger" radius="full">文档协作COOPERATE</larecipe-button>
+```bash
+# 代码使用GIT作为管理工具，地址：http://10.3.38.251:8080/php_server/docs
+# 所有文档收录在{base_dir}/resources/docs/master/*.md下
+# 提交新文件或编辑文件
+# 索引文件放在index.md
+```
+<larecipe-badge type="success" circle icon="fa fa-share-square-o"></larecipe-badge>
+<larecipe-button type="success" radius="full">文档共享SHARE</larecipe-button>
+```bash
+# 记录-共享-协作
+# 继续调研使用GitBook或ReadTheDocs进行文档部署
+```
+[<larecipe-badge type="info" circle icon="fa fa-external-link"></larecipe-badge> <larecipe-button type="info" radius="full">MARKDOWN</larecipe-button>](markdown)
+<larecipe-card>
+    <larecipe-badge type="success" circle class="mr-3" icon="fa fa-info"></larecipe-badge> 文档完成进度PROGRESS
+    <larecipe-progress type="success" :value="60"></larecipe-progress>
+</larecipe-card>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+> {info} SHARE :joy: CREATE :sunny: COOPERATE :pig: TEAM :bug: MINING :coffee: EXPLORE :office: MARKDOWN  :heavy_check_mark:
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/motenzhang/motenzhang.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+![logo](http://newsysfile.peopleyuqing.com/group1/M00/00/01/CiYL2FwnGDuAY_DoAA_QSMGzpxU152.png)
+<!-- <img alt="logo" src="http://newsysfile.peopleyuqing.com/group1/M00/00/01/CiYL2FwnGDuAY_DoAA_QSMGzpxU152.png"> -->
